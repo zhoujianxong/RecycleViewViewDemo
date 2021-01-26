@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.example.recycleviewdemo"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    dataBinding {
+//        enabled = true
+//    }
+
+    buildFeatures{
+        dataBinding=true;
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //引入rxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
+
+    //引入rxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //引入 Android智能下拉刷新框架-SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.wuxiaolong.pullloadmorerecyclerview:library:1.1.2'
+
+    //BaseQuickAdapter  使用
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-beta01'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'
+
+    //recyclerview 动画    https://github.com/wasabeef/recyclerview-animators/tree/master/animators/src/main/java/jp/wasabeef/recyclerview/animators
+    implementation 'jp.wasabeef:recyclerview-animators:2.2.7'
+
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.11.0'
+
+}
