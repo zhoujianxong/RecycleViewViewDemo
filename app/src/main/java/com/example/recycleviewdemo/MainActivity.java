@@ -13,6 +13,9 @@ import com.example.recycleviewdemo.databinding.ActivityMainBinding;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ */
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     private List<BaseMultipleBean> mMessages = new ArrayList<>();
